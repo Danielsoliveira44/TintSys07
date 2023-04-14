@@ -20,18 +20,28 @@ namespace TintSysDesk
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-            tpgEnderecos.Focus();
+            
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            Cliente cliente  = new Cliente(); 
+            
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show(txtId.Text);
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

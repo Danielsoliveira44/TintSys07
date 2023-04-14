@@ -30,8 +30,7 @@
         {
             this.tbcCliente = new System.Windows.Forms.TabControl();
             this.tpgDados = new System.Windows.Forms.TabPage();
-            this.tpgEnderecos = new System.Windows.Forms.TabPage();
-            this.tpgTelefones = new System.Windows.Forms.TabPage();
+            this.mktCpf = new System.Windows.Forms.MaskedTextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -43,9 +42,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.mktCpf = new System.Windows.Forms.MaskedTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tpgEnderecos = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tpgTelefones = new System.Windows.Forms.TabPage();
             this.tbcCliente.SuspendLayout();
             this.tpgDados.SuspendLayout();
             this.tpgEnderecos.SuspendLayout();
@@ -86,27 +86,14 @@
             this.tpgDados.Text = "Dados Pessoais";
             this.tpgDados.UseVisualStyleBackColor = true;
             // 
-            // tpgEnderecos
+            // mktCpf
             // 
-            this.tpgEnderecos.Controls.Add(this.dataGridView1);
-            this.tpgEnderecos.Controls.Add(this.button1);
-            this.tpgEnderecos.Location = new System.Drawing.Point(4, 22);
-            this.tpgEnderecos.Name = "tpgEnderecos";
-            this.tpgEnderecos.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgEnderecos.Size = new System.Drawing.Size(577, 292);
-            this.tpgEnderecos.TabIndex = 1;
-            this.tpgEnderecos.Text = "Endereços";
-            this.tpgEnderecos.UseVisualStyleBackColor = true;
-            // 
-            // tpgTelefones
-            // 
-            this.tpgTelefones.Location = new System.Drawing.Point(4, 22);
-            this.tpgTelefones.Name = "tpgTelefones";
-            this.tpgTelefones.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgTelefones.Size = new System.Drawing.Size(347, 198);
-            this.tpgTelefones.TabIndex = 2;
-            this.tpgTelefones.Text = "Telefones";
-            this.tpgTelefones.UseVisualStyleBackColor = true;
+            this.mktCpf.Location = new System.Drawing.Point(94, 141);
+            this.mktCpf.Mask = "000.000.000-99";
+            this.mktCpf.Name = "mktCpf";
+            this.mktCpf.Size = new System.Drawing.Size(123, 22);
+            this.mktCpf.TabIndex = 24;
+            this.mktCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // checkBox1
             // 
@@ -120,24 +107,26 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(87, 110);
+            this.txtEmail.Location = new System.Drawing.Point(94, 110);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(283, 22);
             this.txtEmail.TabIndex = 20;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(87, 83);
+            this.txtNome.Location = new System.Drawing.Point(94, 83);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(283, 22);
             this.txtNome.TabIndex = 19;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(87, 56);
+            this.txtId.Location = new System.Drawing.Point(94, 56);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(81, 22);
             this.txtId.TabIndex = 18;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // button3
             // 
@@ -170,7 +159,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 141);
+            this.label4.Location = new System.Drawing.Point(49, 141);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 16);
             this.label4.TabIndex = 11;
@@ -203,14 +192,25 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "ID";
             // 
-            // mktCpf
+            // tpgEnderecos
             // 
-            this.mktCpf.Location = new System.Drawing.Point(87, 141);
-            this.mktCpf.Mask = "000.000.000-99";
-            this.mktCpf.Name = "mktCpf";
-            this.mktCpf.Size = new System.Drawing.Size(123, 22);
-            this.mktCpf.TabIndex = 24;
-            this.mktCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tpgEnderecos.Controls.Add(this.dataGridView1);
+            this.tpgEnderecos.Controls.Add(this.button1);
+            this.tpgEnderecos.Location = new System.Drawing.Point(4, 22);
+            this.tpgEnderecos.Name = "tpgEnderecos";
+            this.tpgEnderecos.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgEnderecos.Size = new System.Drawing.Size(577, 292);
+            this.tpgEnderecos.TabIndex = 1;
+            this.tpgEnderecos.Text = "Endereços";
+            this.tpgEnderecos.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 203);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(565, 83);
+            this.dataGridView1.TabIndex = 1;
             // 
             // button1
             // 
@@ -222,13 +222,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // tpgTelefones
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 203);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(565, 83);
-            this.dataGridView1.TabIndex = 1;
+            this.tpgTelefones.Location = new System.Drawing.Point(4, 22);
+            this.tpgTelefones.Name = "tpgTelefones";
+            this.tpgTelefones.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgTelefones.Size = new System.Drawing.Size(577, 292);
+            this.tpgTelefones.TabIndex = 2;
+            this.tpgTelefones.Text = "Telefones";
+            this.tpgTelefones.UseVisualStyleBackColor = true;
             // 
             // FrmCliente
             // 

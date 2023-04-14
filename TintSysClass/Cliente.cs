@@ -18,8 +18,8 @@ namespace TintSysClass
         private string email;
         private DateTime data;
         private bool ativo;
-        private List<Endereco> enderecos;
-        private List<Telefone> telefones;
+        //private List<Endereco> enderecos;
+        //private List<Telefone> telefones;
 
 
         // Propriedades (Encapsulamento) getters and setters
@@ -112,9 +112,9 @@ namespace TintSysClass
                     dr.GetString(2),
                     dr.GetString(3),
                     dr.GetDateTime(4),
-                    dr.GetBoolean(5),
-                    Endereco.Listar(dr.GetString(6)),
-                    Telefone.Listar(dr.GetString(7))
+                    dr.GetBoolean(5)
+                    //Endereco.Listar(dr.GetString(6)),
+                    //Telefone.Listar(dr.GetString(7))
                     );
             }
             Banco.Fechar(cmd);

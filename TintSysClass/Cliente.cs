@@ -33,9 +33,18 @@ namespace TintSysClass
         public List<Endereco> Enderecos { get; set; }
         public List<Telefone> Telefones { get; set; }
 
-
+        public Cliente(string nome, string cpf, string email)
+        {
+            Nome = nome;
+            Cpf = cpf;
+            Email = email;
+        }
 
         // Métodos contrutores 
+        public Cliente()
+        {
+
+        }
         public Cliente(int id, string nome, string cpf, string email, DateTime data, bool ativo)
         {
             Id = id;
@@ -86,7 +95,6 @@ namespace TintSysClass
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
             cmd.Parameters.AddWithValue("@cpf", Cpf);
             cmd.Parameters.AddWithValue("@email", Email);
-            cmd.Parameters.AddWithValue("@data", Data);
             // executa a instrução SQL na conexão
             cmd.ExecuteNonQuery();
             // obtendo o id do nível recém inserido

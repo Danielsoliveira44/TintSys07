@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TintSysClass;
 
 namespace TintSysDesk
 {
@@ -18,42 +17,52 @@ namespace TintSysDesk
             InitializeComponent();
         }
 
-        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            FrmCliente frmCliente = new FrmCliente();
-            frmCliente.MdiParent= this;
-            frmCliente.Show();
+            MessageBox.Show(GetHashCode().ToString());
         }
 
-        private void manterToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void manterToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             FrmUsuarios frmUsuarios = new FrmUsuarios();
             frmUsuarios.MdiParent = this;
             frmUsuarios.Show();
         }
 
+        private void administrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCliente frmCliente = new FrmCliente();
+            frmCliente.MdiParent = this;
+            frmCliente.Show();
+        }
+
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmProduto frmProduto = new FrmProduto();   
-            frmProduto.MdiParent = this;    
+            FrmProduto frmProduto = new FrmProduto();
+            frmProduto.MdiParent = this;
             frmProduto.Show();
-        }
-
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void novoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmPedido frmPedido = new FrmPedido();  
-            frmPedido.MdiParent = this;
-            frmPedido.Show();
         }
 
         private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmPedido frmPedido = new FrmPedido();
+            frmPedido.MdiParent = this;
+            frmPedido.Show();
         }
     }
 }

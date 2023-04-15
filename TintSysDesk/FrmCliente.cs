@@ -25,8 +25,13 @@ namespace TintSysDesk
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            
-            
+            Cliente cliente = new Cliente(
+                txtNome.Text,
+                mktCpf.Text,
+                txtEmail.Text
+                );
+            cliente.Inserir();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,6 +45,11 @@ namespace TintSysDesk
         }
 
         private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
         {
 
         }

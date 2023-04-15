@@ -31,6 +31,16 @@ namespace TintSysDesk
                 txtEmail.Text
                 );
             cliente.Inserir();
+            if (cliente.Id > 0)
+            {
+                txtId.Text = cliente.Id.ToString();
+                
+                MessageBox.Show("Produto gravado com sucesso!");
+
+            }
+            else
+                MessageBox.Show("Falha ao gravar o Produto!1");
+
 
         }
 

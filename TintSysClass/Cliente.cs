@@ -90,7 +90,7 @@ namespace TintSysClass
             // define o tipo de instrução MySQL a ser processada pelo serv banco dados 
             cmd.CommandType = CommandType.Text;
             // define a query sql especificada com parametros ()
-            cmd.CommandText = "insert cliente (nome, cpf, email, datacad, ativo) values (@nome, @cpf, @email, 'default' , 1)";
+            cmd.CommandText = "insert clientes (nome, cpf, email, datacad, ativo) values (@nome, @cpf, @email, 'default' , 1)";
             // cria o parametro e associa ao valor
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
             cmd.Parameters.AddWithValue("@cpf", Cpf);

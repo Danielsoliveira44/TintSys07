@@ -134,7 +134,7 @@ namespace TintSysClass
             Banco.Fechar(cmd);
             return cliente;
         }
-        public static Cliente ObterPorEmail(int _email)
+        public static Cliente ObterPorEmail(string _email)
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
@@ -207,9 +207,9 @@ namespace TintSysClass
             Banco.Fechar(cmd);
         }
 
-        public static Cliente ObterPorEmail(string v)
-        {
-            throw new NotImplementedException();
-        }
+        //public static Cliente ObterPorEmail(string v)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

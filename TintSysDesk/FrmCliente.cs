@@ -102,11 +102,11 @@ namespace TintSysDesk
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Cliente cliente = Cliente.ObterPorEmail(Convert.ToInt32(txtEmailEnd.Text));
+            Cliente cliente = Cliente.ObterPorEmail(txtEmailEnd.Text);
             if (cliente != null)
             {
 
-                txtIdCli.Text = cliente.Id;
+                txtIdCli.Text = Convert.ToString(cliente.Id);
             }
             gpbLogin.Enabled = false;
             gpbEndereco.Enabled = true;
@@ -116,9 +116,9 @@ namespace TintSysDesk
         private void bntInserirEnd_Click(object sender, EventArgs e)
         {
             Endereco endereco = new Endereco(
-               double.Parse(txtCep.Text),
+               txtCep.Text,
                txtRua.Text,
-               double.Parse(txtNumero.Text),
+               txtNumero.Text,
                txtComplemento.Text,
                txtBairro.Text,
                txtCidade.Text,

@@ -33,6 +33,16 @@ namespace TintSysClass
         public List<Endereco> Enderecos { get; set; }
         public List<Telefone> Telefones { get; set; }
 
+        public Cliente()
+        {
+
+        }
+        public Cliente(int id, string email)
+        {
+            Id = id;
+            Email = email;
+        }
+
         public Cliente(string nome, string cpf, string email)
         {
             Nome = nome;
@@ -41,10 +51,6 @@ namespace TintSysClass
         }
 
         // Métodos contrutores 
-        public Cliente()
-        {
-
-        }
         public Cliente(int id, string nome, string cpf, string email, DateTime data, bool ativo)
         {
             Id = id;
@@ -128,6 +134,24 @@ namespace TintSysClass
             Banco.Fechar(cmd);
             return cliente;
         }
+        public static Cliente ObterPorEmail(int _email)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from clientes where email = @email";
+            cmd.Parameters.AddWithValue("@email", _email);
+            var dr = cmd.ExecuteReader();
+            Cliente cliente = null;
+            while (dr.Read())
+            {
+                cliente = new Cliente(
+                    dr.GetInt32(0),
+                    dr.GetString(3)
+                    );
+            }
+            Banco.Fechar(cmd);
+            return cliente;
+        }
         public static List<Cliente> Listar()
         {
             List<Cliente> lista = new List<Cliente>();
@@ -183,6 +207,9 @@ namespace TintSysClass
             Banco.Fechar(cmd);
         }
 
-
+        public static Cliente ObterPorEmail(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -12,9 +12,9 @@ namespace ClassLibrary2
     public class Endereco
     {
         private int id;
-        private int cep;
+        private double cep;
         private string logradouro;
-        private int numero;
+        private double numero;
         private string complemento;
         private string bairro;
         private string cidade;
@@ -23,9 +23,9 @@ namespace ClassLibrary2
         private string tipo;
 
         public int Id { get => id; set => id = value; }
-        public int Cep { get => cep; set => cep = value; }
+        public double Cep { get => cep; set => cep = value; }
         public string Logradouro { get => logradouro; set => logradouro = value; }
-        public int Numero { get => numero; set => numero = value; }
+        public double Numero { get => numero; set => numero = value; }
         public string Complemento { get => complemento; set => complemento = value; }
         public string Bairro { get => bairro; set => bairro = value; }
         public string Cidade { get => cidade; set => cidade = value; }
@@ -33,10 +33,26 @@ namespace ClassLibrary2
         public string Uf { get => uf; set => uf = value; }
         public string Tipo { get => tipo; set => tipo = value; }
 
+        public Endereco(double cep, string logradouro, double numero, string complemento, string bairro, string cidade, string estado, string uf, string tipo)
+        {
+            Cep = cep;
+            Logradouro = logradouro;
+            Numero = numero;
+            Complemento = complemento;
+            Bairro = bairro;
+            Cidade = cidade;
+            Estado = estado;
+            Uf = uf;
+            Tipo = tipo;
+        }
+
 
         // Métodos contrutores 
-        public Endereco() { } // vazio
-        public Endereco(int id, int cep, string logradouro, int numero, string complemento, string bairro, string cidade, string estado,
+        public Endereco() 
+        {
+
+        } // vazio
+        public Endereco(int id, double cep, string logradouro, double numero, string complemento, string bairro, string cidade, string estado,
             string uf, string tipo)
         {
             Id = id;
@@ -51,7 +67,7 @@ namespace ClassLibrary2
             Tipo = tipo;
 
         }
-        public Endereco(int id, string logradouro, int numero, string bairro, string cidade)
+        public Endereco(int id, string logradouro, double numero, string bairro, string cidade)
         {
             Id = id;
             Logradouro = logradouro;
@@ -91,9 +107,9 @@ namespace ClassLibrary2
             {
                 endereco = new Endereco(
                         dr.GetInt32(0),
-                        dr.GetInt32(1),
+                        dr.GetDouble(1),
                         dr.GetString(2),
-                        dr.GetInt32(3),
+                        dr.GetDouble(3),
                         dr.GetString(4),
                         dr.GetString(5),
                         dr.GetString(6),
@@ -121,7 +137,7 @@ namespace ClassLibrary2
                 lista.Add(new Endereco(
                          dr.GetInt32(0),
                         dr.GetString(1),
-                        dr.GetInt32(2),
+                        dr.GetDouble(2),
                         dr.GetString(3),
                         dr.GetString(4)
                     ));

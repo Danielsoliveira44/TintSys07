@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grbDados = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbUsuario = new System.Windows.Forms.ComboBox();
@@ -86,13 +86,14 @@
             this.grbDados.TabIndex = 0;
             this.grbDados.TabStop = false;
             this.grbDados.Text = "Dados";
+            this.grbDados.Enter += new System.EventHandler(this.grbDados_Enter);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(254, 38);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.Size = new System.Drawing.Size(73, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Atendente";
             // 
@@ -101,7 +102,7 @@
             this.cmbUsuario.FormattingEnabled = true;
             this.cmbUsuario.Location = new System.Drawing.Point(316, 35);
             this.cmbUsuario.Name = "cmbUsuario";
-            this.cmbUsuario.Size = new System.Drawing.Size(121, 21);
+            this.cmbUsuario.Size = new System.Drawing.Size(121, 25);
             this.cmbUsuario.TabIndex = 3;
             // 
             // label3
@@ -109,7 +110,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.Size = new System.Drawing.Size(51, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Cliente";
             // 
@@ -118,7 +119,7 @@
             this.cmbCliente.FormattingEnabled = true;
             this.cmbCliente.Location = new System.Drawing.Point(60, 35);
             this.cmbCliente.Name = "cmbCliente";
-            this.cmbCliente.Size = new System.Drawing.Size(173, 21);
+            this.cmbCliente.Size = new System.Drawing.Size(173, 25);
             this.cmbCliente.TabIndex = 1;
             // 
             // btnInserir
@@ -137,7 +138,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(413, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 24);
+            this.label1.Size = new System.Drawing.Size(145, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "PEDIDO Nº";
             // 
@@ -146,7 +147,7 @@
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.Location = new System.Drawing.Point(534, 27);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(127, 31);
+            this.txtId.Size = new System.Drawing.Size(127, 37);
             this.txtId.TabIndex = 2;
             this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -178,14 +179,14 @@
             this.txtUnid.Location = new System.Drawing.Point(306, 35);
             this.txtUnid.Name = "txtUnid";
             this.txtUnid.ReadOnly = true;
-            this.txtUnid.Size = new System.Drawing.Size(38, 20);
+            this.txtUnid.Size = new System.Drawing.Size(38, 23);
             this.txtUnid.TabIndex = 3;
             // 
             // txtQuantidade
             // 
             this.txtQuantidade.Location = new System.Drawing.Point(424, 35);
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(49, 20);
+            this.txtQuantidade.Size = new System.Drawing.Size(49, 23);
             this.txtQuantidade.TabIndex = 3;
             // 
             // label6
@@ -193,7 +194,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(102, 19);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.Size = new System.Drawing.Size(71, 17);
             this.label6.TabIndex = 2;
             this.label6.Text = "Descrição";
             // 
@@ -202,7 +203,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(305, 19);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 13);
+            this.label7.Size = new System.Drawing.Size(34, 17);
             this.label7.TabIndex = 2;
             this.label7.Text = "Und";
             // 
@@ -211,7 +212,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(478, 19);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 2;
             this.label10.Text = "Desconto";
             // 
@@ -220,7 +221,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(351, 19);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.Size = new System.Drawing.Size(45, 17);
             this.label8.TabIndex = 2;
             this.label8.Text = "Preço";
             // 
@@ -229,7 +230,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(421, 19);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 13);
+            this.label9.Size = new System.Drawing.Size(31, 17);
             this.label9.TabIndex = 2;
             this.label9.Text = "Qtd";
             // 
@@ -238,7 +239,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(15, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.Size = new System.Drawing.Size(52, 17);
             this.label5.TabIndex = 2;
             this.label5.Text = "Código";
             // 
@@ -246,7 +247,7 @@
             // 
             this.txtDesconto.Location = new System.Drawing.Point(479, 35);
             this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.Size = new System.Drawing.Size(64, 20);
+            this.txtDesconto.Size = new System.Drawing.Size(64, 23);
             this.txtDesconto.TabIndex = 2;
             this.txtDesconto.Text = "0";
             this.txtDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -256,7 +257,7 @@
             this.txtPreco.Location = new System.Drawing.Point(352, 35);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.ReadOnly = true;
-            this.txtPreco.Size = new System.Drawing.Size(64, 20);
+            this.txtPreco.Size = new System.Drawing.Size(64, 23);
             this.txtPreco.TabIndex = 2;
             this.txtPreco.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -265,14 +266,14 @@
             this.txtDescricao.Location = new System.Drawing.Point(105, 35);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.ReadOnly = true;
-            this.txtDescricao.Size = new System.Drawing.Size(193, 20);
+            this.txtDescricao.Size = new System.Drawing.Size(193, 23);
             this.txtDescricao.TabIndex = 1;
             // 
             // txtIdProd
             // 
             this.txtIdProd.Location = new System.Drawing.Point(18, 35);
             this.txtIdProd.Name = "txtIdProd";
-            this.txtIdProd.Size = new System.Drawing.Size(79, 20);
+            this.txtIdProd.Size = new System.Drawing.Size(79, 23);
             this.txtIdProd.TabIndex = 1;
             this.txtIdProd.TextChanged += new System.EventHandler(this.txtIdProd_TextChanged);
             // 
@@ -304,6 +305,7 @@
             this.dgvItens.Name = "dgvItens";
             this.dgvItens.ReadOnly = true;
             this.dgvItens.RowHeadersVisible = false;
+            this.dgvItens.RowHeadersWidth = 51;
             this.dgvItens.Size = new System.Drawing.Size(630, 168);
             this.dgvItens.TabIndex = 3;
             // 
@@ -311,6 +313,7 @@
             // 
             this.clnSeq.Frozen = true;
             this.clnSeq.HeaderText = "#";
+            this.clnSeq.MinimumWidth = 6;
             this.clnSeq.Name = "clnSeq";
             this.clnSeq.ReadOnly = true;
             this.clnSeq.Width = 20;
@@ -319,6 +322,7 @@
             // 
             this.clnCodigo.Frozen = true;
             this.clnCodigo.HeaderText = "Cód";
+            this.clnCodigo.MinimumWidth = 6;
             this.clnCodigo.Name = "clnCodigo";
             this.clnCodigo.ReadOnly = true;
             this.clnCodigo.Width = 70;
@@ -327,6 +331,7 @@
             // 
             this.clnDescricao.Frozen = true;
             this.clnDescricao.HeaderText = "Descrição";
+            this.clnDescricao.MinimumWidth = 6;
             this.clnDescricao.Name = "clnDescricao";
             this.clnDescricao.ReadOnly = true;
             this.clnDescricao.Width = 190;
@@ -335,16 +340,18 @@
             // 
             this.clnUnidade.Frozen = true;
             this.clnUnidade.HeaderText = "Un";
+            this.clnUnidade.MinimumWidth = 6;
             this.clnUnidade.Name = "clnUnidade";
             this.clnUnidade.ReadOnly = true;
             this.clnUnidade.Width = 50;
             // 
             // clnPreco
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.clnPreco.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.clnPreco.DefaultCellStyle = dataGridViewCellStyle1;
             this.clnPreco.Frozen = true;
             this.clnPreco.HeaderText = "Preço R$";
+            this.clnPreco.MinimumWidth = 6;
             this.clnPreco.Name = "clnPreco";
             this.clnPreco.ReadOnly = true;
             this.clnPreco.Width = 80;
@@ -353,28 +360,32 @@
             // 
             this.clnQtd.Frozen = true;
             this.clnQtd.HeaderText = "Qtd";
+            this.clnQtd.MinimumWidth = 6;
             this.clnQtd.Name = "clnQtd";
             this.clnQtd.ReadOnly = true;
             this.clnQtd.Width = 60;
             // 
             // clnDesconto
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.clnDesconto.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.clnDesconto.DefaultCellStyle = dataGridViewCellStyle2;
             this.clnDesconto.Frozen = true;
             this.clnDesconto.HeaderText = "Desconto";
+            this.clnDesconto.MinimumWidth = 6;
             this.clnDesconto.Name = "clnDesconto";
             this.clnDesconto.ReadOnly = true;
             this.clnDesconto.Width = 60;
             // 
             // clnTotal
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.clnTotal.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.clnTotal.DefaultCellStyle = dataGridViewCellStyle3;
             this.clnTotal.Frozen = true;
             this.clnTotal.HeaderText = "Total R$";
+            this.clnTotal.MinimumWidth = 6;
             this.clnTotal.Name = "clnTotal";
             this.clnTotal.ReadOnly = true;
+            this.clnTotal.Width = 125;
             // 
             // label2
             // 
@@ -382,7 +393,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(374, 486);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 24);
+            this.label2.Size = new System.Drawing.Size(136, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "TOTAL R$";
             // 
@@ -391,7 +402,7 @@
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(488, 482);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(173, 31);
+            this.txtTotal.Size = new System.Drawing.Size(173, 37);
             this.txtTotal.TabIndex = 2;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -412,7 +423,7 @@
             this.lblStatus.ForeColor = System.Drawing.Color.Red;
             this.lblStatus.Location = new System.Drawing.Point(695, 31);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(21, 24);
+            this.lblStatus.Size = new System.Drawing.Size(27, 29);
             this.lblStatus.TabIndex = 1;
             this.lblStatus.Text = "_";
             // 
@@ -425,7 +436,7 @@
             // 
             // FrmPedido
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 615);
             this.Controls.Add(this.panel1);

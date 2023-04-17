@@ -98,5 +98,10 @@ namespace TintSysDesk
             }
             txtTotal.Text = subTotal.ToString();
         }
+
+        private void grbDados_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

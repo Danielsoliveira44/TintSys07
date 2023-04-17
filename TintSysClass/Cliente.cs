@@ -207,9 +207,6 @@ namespace TintSysClass
             Banco.Fechar(cmd);
         }
 
-        //public static Cliente ObterPorEmail(string v)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        
     }
 }

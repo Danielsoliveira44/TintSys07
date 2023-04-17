@@ -16,11 +16,14 @@ namespace ClassLibrary2
         private int id;
         private string numero;
         private string tipo;
+        private Cliente cliente;
+
 
         // Propriedades (Encapsulamento) getters and setters
         public int Id { get => id; set => id = value; }
         public string Numero { get => numero; set => numero = value; }
         public string Tipo { get => tipo; set => tipo = value; }
+        public Cliente Cliente { get => cliente; set => cliente = value; }
 
         // Métodos contrutores 
         public Telefone()
@@ -34,11 +37,19 @@ namespace ClassLibrary2
             Tipo = tipo;
 
         }
-        public Telefone(string numero, string tipo)
+        public Telefone(int id, string numero, string tipo, Cliente cliente)
+        {
+            Id = id;
+            Numero = numero;
+            Tipo = tipo;
+            Cliente = cliente;
+            
+        }
+        public Telefone(string numero, string tipo, Cliente cliente)
         {
             Numero = numero;
             Tipo = tipo;
-
+            Cliente = cliente;
         }
         // Métodos da Classes (inserir, alterar, consultar,por Id, por nome, etc.... )
         public void Inserir()
@@ -48,12 +59,11 @@ namespace ClassLibrary2
             // define o tipo de instrução MySQL a ser processada pelo serv banco dados 
             cmd.CommandType = CommandType.Text;
             // define a query sql especificada com parametros ()
-            cmd.CommandText = "insert telefones (numero, tipo, cliente) values (@numero, @tipo, @cliente)";
+            cmd.CommandText = "insert telefones (numero, tipo, cliente_id) values (@numero, @tipo, @cliente)";
             // cria o parametro e associa ao valor
             cmd.Parameters.AddWithValue("@numero", Numero);
             cmd.Parameters.AddWithValue("@tipo", Tipo);
-            //cmd.Parameters.AddWithValue("@cliente", Cliente.Id);
-
+            cmd.Parameters.AddWithValue("@cliente", Cliente.Id);
             // executa a instrução SQL na conexão
             cmd.ExecuteNonQuery();
             // obtendo o id do nível recém inserido
@@ -76,8 +86,9 @@ namespace ClassLibrary2
                 telefone = new Telefone(
                     dr.GetInt32(0),
                     dr.GetString(1),
-                    dr.GetString(2)
-                    );
+                    dr.GetString(2),
+                    Cliente.ObterPorId(dr.GetInt32(3)
+                    ));
             }
             Banco.Fechar(cmd);
             return telefone;

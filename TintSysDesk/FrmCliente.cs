@@ -136,11 +136,42 @@ namespace TintSysDesk
             if (endereco.Id > 0)
             {
                 txtId.Text = endereco .Id.ToString();
-                MessageBox.Show("Produto gravado com sucesso!");
+                MessageBox.Show("Endereço gravado com sucesso!");
 
             }
             else
-                MessageBox.Show("Falha ao gravar o Produto!1");
+                MessageBox.Show("Falha ao gravar o Endereço!1");
+        }
+
+        private void btnLoginTel_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = Cliente.ObterPorEmail(txtLoginTel.Text);
+            if (cliente != null)
+            {
+
+                int idClientes = cliente.Id;
+                txtCliTel.Text = idClientes.ToString();
+            }
+            gpbLoginTel.Enabled = false;
+            gpbTelefone.Enabled = true;
+        }
+
+        private void btnInserirTel_Click(object sender, EventArgs e)
+        {
+            Telefone telefone = new Telefone(
+                txtNumeroTel.Text,
+                txtTipoTel.Text,
+                Cliente.ObterPorId(Convert.ToInt32(txtCliTel.Text))
+                );
+            telefone.Inserir();
+            if (telefone.Id > 0)
+            {
+                txtId.Text = telefone.Id.ToString();
+                MessageBox.Show("Telefone gravado com sucesso!");
+
+            }
+            else
+                MessageBox.Show("Falha ao gravar o Telefone!1");
         }
     }
 }

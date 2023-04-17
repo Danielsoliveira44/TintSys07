@@ -30,8 +30,8 @@ namespace TintSysClass
         public string Email { get => email; set => email = value; }
         public DateTime Data { get => data; set => data = value; }
         public bool Ativo { get => ativo; set => ativo = value; }
-        public List<Endereco> Enderecos { get; set; }
-        public List<Telefone> Telefones { get; set; }
+        //public List<Endereco> Enderecos { get; set; }
+        //public List<Telefone> Telefones { get; set; }
 
         public Cliente()
         {
@@ -67,8 +67,8 @@ namespace TintSysClass
             Cpf = cpf;
             Email = email;
             Ativo = ativo;
-            Enderecos = enderecos;
-            Telefones = telefones;
+            //Enderecos = enderecos;
+            //Telefones = telefones;
         }
         public Cliente(string nome, string email, bool ativo)
         {
@@ -84,8 +84,8 @@ namespace TintSysClass
             Email = email;
             Data = data;
             Ativo = ativo;
-            Enderecos = enderecos;
-            Telefones = telefones;
+            //Enderecos = enderecos;
+            //Telefones = telefones;
         }
 
         // Métodos da Classes (inserir, alterar, consultar,por Id, por nome, etc.... )

@@ -21,6 +21,7 @@ namespace ClassLibrary2
         private string estado;
         private string uf;
         private string tipo;
+        private Cliente cliente;
 
         public int Id { get => id; set => id = value; }
         public string Cep { get => cep; set => cep = value; }
@@ -32,6 +33,21 @@ namespace ClassLibrary2
         public string Estado { get => estado; set => estado = value; }
         public string Uf { get => uf; set => uf = value; }
         public string Tipo { get => tipo; set => tipo = value; }
+        public Cliente Cliente { get => cliente; set => cliente = value; }
+
+        public Endereco(string cep, string logradouro, string numero, string complemento, string bairro, string cidade, string estado, string uf, string tipo, Cliente cliente) : this(cep, logradouro, numero, complemento, bairro, cidade, estado, uf, tipo)
+        {
+            Cep = cep;
+            Logradouro = logradouro;
+            Numero = numero;
+            Complemento = complemento;
+            Bairro = bairro;
+            Cidade = cidade;
+            Estado = estado;
+            Uf = uf;
+            Tipo = tipo;
+            Cliente = cliente;
+        }
 
         public Endereco(string cep, string logradouro, string numero, string complemento, string bairro, string cidade, string estado, string uf, string tipo)
         {
@@ -53,7 +69,7 @@ namespace ClassLibrary2
 
         } // vazio
         public Endereco(int id, string cep, string logradouro, string numero, string complemento, string bairro, string cidade, string estado,
-            string uf, string tipo)
+            string uf, string tipo, Cliente cliente)
         {
             Id = id;
             Cep = cep;
@@ -65,6 +81,7 @@ namespace ClassLibrary2
             Estado = estado;
             Uf = uf;
             Tipo = tipo;
+            Cliente = cliente;
 
         }
         public Endereco(int id, string logradouro, string numero, string bairro, string cidade)
@@ -80,8 +97,8 @@ namespace ClassLibrary2
         public void Inserir()
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "insert usuarios (cep, logradouro, numero, complemento, bairro, cidade, estado, uf, tipo), " +
-                "@cep, @logradouro, @numero, @complemento, @bairro, @cidade, @estado, @uf, @tipo) ";
+            cmd.CommandText = "insert enderecos (cep, logradouro, numero, complemento, bairro, cidade, estado, uf, tipo, cliente_id) " +
+                "values (@cep, @logradouro, @numero, @complemento, @bairro, @cidade, @estado, @uf, @tipo, @cliente) ";
             cmd.Parameters.AddWithValue("@cep", Cep);
             cmd.Parameters.AddWithValue("@logradouro", Logradouro);
             cmd.Parameters.AddWithValue("@numero", Numero);
@@ -91,6 +108,7 @@ namespace ClassLibrary2
             cmd.Parameters.AddWithValue("@estado", Estado);
             cmd.Parameters.AddWithValue("@uf", Uf);
             cmd.Parameters.AddWithValue("@tipo", Tipo);
+            cmd.Parameters.AddWithValue("@cliente", Cliente.Id);
             cmd.ExecuteNonQuery();
             cmd.CommandText = "select @@identity";
             Id = Convert.ToInt32(cmd.ExecuteScalar());
@@ -115,7 +133,9 @@ namespace ClassLibrary2
                         dr.GetString(6),
                         dr.GetString(7),
                         dr.GetString(8),
-                        dr.GetString(9)
+                        dr.GetString(9),
+                        Cliente.ObterPorId(dr.GetInt32(10))
+
                     );
             }
             Banco.Fechar(cmd);

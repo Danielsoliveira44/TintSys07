@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TintSysClass;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TintSysDesk
 {
@@ -106,7 +107,8 @@ namespace TintSysDesk
             if (cliente != null)
             {
 
-                txtIdCli.Text = Convert.ToString(cliente.Id);
+                int idCliente = cliente.Id;
+                txtIdCli.Text = idCliente.ToString();
             }
             gpbLogin.Enabled = false;
             gpbEndereco.Enabled = true;
@@ -115,6 +117,7 @@ namespace TintSysDesk
 
         private void bntInserirEnd_Click(object sender, EventArgs e)
         {
+           
             Endereco endereco = new Endereco(
                txtCep.Text,
                txtRua.Text,
@@ -124,9 +127,12 @@ namespace TintSysDesk
                txtCidade.Text,
                txtEstado.Text,
                txtUf.Text,
-               txtTipo.Text
-                );
+               txtTipo.Text,
+               Cliente.ObterPorId(Convert.ToInt32(txtIdCli.Text))
+                ); 
             endereco.Inserir();
+            
+
             if (endereco.Id > 0)
             {
                 txtId.Text = endereco .Id.ToString();

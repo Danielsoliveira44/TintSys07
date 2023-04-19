@@ -33,5 +33,26 @@ namespace TintSysDesk
         {
 
         }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCliente frmCliente = new FrmCliente();
+            frmCliente.MdiParent = this;
+            frmCliente.Show();
+        }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPedido frmPedido = new FrmPedido();
+            frmPedido.MdiParent = this;
+            frmPedido.Show();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProduto frmProduto = new FrmProduto();
+            frmProduto.MdiParent = this;
+            frmProduto.Show();
+        }
     }
 }

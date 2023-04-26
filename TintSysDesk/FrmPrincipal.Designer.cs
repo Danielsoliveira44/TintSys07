@@ -36,6 +36,8 @@
             this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mspPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,9 +66,12 @@
             // 
             // clienteToolStripMenuItem
             // 
+            this.clienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.administrarToolStripMenuItem,
+            this.listarToolStripMenuItem1});
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.clienteToolStripMenuItem.Text = "C&liente";
+            this.clienteToolStripMenuItem.Text = "&Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // usuáriosToolStripMenuItem
@@ -76,19 +81,19 @@
             this.listarToolStripMenuItem});
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
             this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.usuáriosToolStripMenuItem.Text = "U&suários";
+            this.usuáriosToolStripMenuItem.Text = "&Usuários";
             // 
             // manterToolStripMenuItem
             // 
             this.manterToolStripMenuItem.Name = "manterToolStripMenuItem";
-            this.manterToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.manterToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.manterToolStripMenuItem.Text = "&Administrar";
             this.manterToolStripMenuItem.Click += new System.EventHandler(this.manterToolStripMenuItem_Click);
             // 
             // listarToolStripMenuItem
             // 
             this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            this.listarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.listarToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.listarToolStripMenuItem.Text = "&Listar";
             // 
             // pedidosToolStripMenuItem
@@ -105,11 +110,25 @@
             this.produtosToolStripMenuItem.Text = "P&rodutos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
+            // administrarToolStripMenuItem
+            // 
+            this.administrarToolStripMenuItem.Name = "administrarToolStripMenuItem";
+            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.administrarToolStripMenuItem.Text = "&Administrar";
+            this.administrarToolStripMenuItem.Click += new System.EventHandler(this.administrarToolStripMenuItem_Click);
+            // 
+            // listarToolStripMenuItem1
+            // 
+            this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
+            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.listarToolStripMenuItem1.Text = "&Listar";
+            this.listarToolStripMenuItem1.Click += new System.EventHandler(this.listarToolStripMenuItem1_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1582, 1103);
+            this.ClientSize = new System.Drawing.Size(1582, 1055);
             this.Controls.Add(this.mspPrincipal);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mspPrincipal;
@@ -135,5 +154,7 @@
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem1;
     }
 }

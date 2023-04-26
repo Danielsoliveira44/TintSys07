@@ -103,5 +103,10 @@ namespace TintSysDesk
         {
 
         }
+
+        private void dgvItens_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

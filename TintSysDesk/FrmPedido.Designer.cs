@@ -308,6 +308,7 @@
             this.dgvItens.RowHeadersWidth = 51;
             this.dgvItens.Size = new System.Drawing.Size(630, 168);
             this.dgvItens.TabIndex = 3;
+            this.dgvItens.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellContentClick);
             // 
             // clnSeq
             // 
